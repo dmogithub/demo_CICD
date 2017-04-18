@@ -1,0 +1,38 @@
+docker service create \
+    --name mysql \
+    --replicas 1 \
+    --publish 3306:3306 \
+    --constraint 'node.role == worker' \
+    --network wordpressnet \
+    --env MYSQL_ROOT_PASSWORD=wordpress \
+    --env MYSQL_DATABASE=wordpress \
+    --env MYSQL_USER=wordpress \
+    --env MYSQL_PASSWORD=wordpress \
+    --mount type=volume,source=wordpressvol,destination=/var/lib/mysql \
+    --limit-memory 1G \
+    --restart-condition any \
+    --restart-delay 5s \
+    --restart-max-attempts 5 \
+    --restart-window 120s \
+    mysql
+
+docker service create \
+    --name wordpress \
+    --replicas 1 \
+    --publish 80:80 \
+    --constraint 'node.role == worker' \
+    --network wordpressnet \
+    --env WORDPRESS_DB_USER=wordpress \
+    --env WORDPRESS_DB_PASSWORD=wordpress \
+    --env WORDPRESS_DB_NAME=wordpress \
+    --env WORDPRESS_TABLE_PREFIX=wp_ \
+    --env WORDPRESS_DB_HOST=mysql:3306 \
+    --mount type=volume,source=wordpressvol,destination=/var/lib/mysql \
+    --limit-memory 1500m \
+    --limit-cpu 0.25 \
+    --restart-condition any \
+    --restart-delay 5s \
+    --restart-max-attempts 5 \
+    --restart-window 120s \
+    eitpocregistry-on.azurecr.io/eitpocregistry/wp-php71-memcached:1.0
+
