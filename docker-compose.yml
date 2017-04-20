@@ -19,7 +19,7 @@ services:
          condition: any
 
    wordpress:
-     image: eitpocregistry-on.azurecr.io/engieit/wp-engieit:1.0
+     image: wp/jenkins-demo:latest
      ports:
        - "80:80"
      depends_on:
