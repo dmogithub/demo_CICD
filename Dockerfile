@@ -27,6 +27,7 @@ RUN { \
 
 RUN a2enmod rewrite expires
 
+
 # installs memcached and enables it in apache
 RUN apt-get update && apt-get install -y libmemcached-dev zlib1g-dev \
 && pecl install memcached-3.0.3 \
