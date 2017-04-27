@@ -12,6 +12,7 @@ node("docker") {
     
         
         
+        
         stage "publish"
         app.push 'master'
         app.push "${commit_id}"
