@@ -11,6 +11,7 @@ node("docker") {
         def app = docker.build "your-project-name"
     
         
+        
         stage "publish"
         app.push 'master'
         app.push "${commit_id}"
