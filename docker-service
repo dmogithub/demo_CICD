@@ -18,7 +18,7 @@ docker service create \
 
 docker service create \
     --name wordpress \
-    --replicas 2 \
+    --replicas 1 \
     --publish 80:80 \
     --constraint 'node.role == worker' \
     --network wordpressnet \
