@@ -74,4 +74,4 @@ volumes:
 
 networks:
   wordpressnet:
-    external: true
+    external: true   
