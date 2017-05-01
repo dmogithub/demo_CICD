@@ -32,7 +32,7 @@ services:
        WORDPRESS_TABLE_PREFIX: wp_
      deploy:
        mode: replicated
-       replicas: 1
+       replicas: 2
        placement:
          constraints: [node.role == manager]
        restart_policy:
