@@ -9,7 +9,7 @@ services:
        MYSQL_USER: wordpress
        MYSQL_PASSWORD: wordpress
      volumes:
-      - minou:/var/lib/mysql
+      - wpvol:/var/lib/mysql
      deploy:
        mode: replicated
        replicas: 1
@@ -26,18 +26,14 @@ services:
        - db
      environment:
        WORDPRESS_DB_HOST: db:3306
-       WORDPRESS_DB_DATABASE: wordpress
-       WORDPRESS_DB_USER: wordpress
-       WORDPRESS_DB_PASSWORD: wordpress
-       WORDPRESS_TABLE_PREFIX: wp_
      deploy:
        mode: replicated
-       replicas: 2
+       replicas: 1
        placement:
-         constraints: [node.role == manager]
+         constraints: [node.role == worker]
        restart_policy:
          condition: on-failure
 
 volumes:
-  minou:
+  wpvol:
     external: true 
