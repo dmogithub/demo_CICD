@@ -13,8 +13,7 @@ RUN set -ex; \
 	docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr; \
 	docker-php-ext-install gd mysqli opcache
 # TODO consider removing the *-dev deps and only keeping the necessary lib* packages
-RUN useradd -d /home/wpuser -m -s /bin/bash wpuser
-USER wpuser
+
 # set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php
 RUN { \
