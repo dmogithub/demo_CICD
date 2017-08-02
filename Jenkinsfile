@@ -1,4 +1,4 @@
-node ("docker") {
+node ('master') {
     def app
 
     stage('Clone repository') {
