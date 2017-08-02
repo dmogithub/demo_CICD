@@ -1,6 +1,5 @@
-pipeline {
-  agent {
-    label 'DOCKERSLAVUS'
+node ('DOCKERSLAVUS') {
+    def app
   }
 
     stage('Clone repository') {
