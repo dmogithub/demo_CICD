@@ -1,5 +1,7 @@
-node ('maitre') {
-    def app
+pipeline {
+  agent {
+    label 'DOCKERSLAVUS'
+  }
 
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
