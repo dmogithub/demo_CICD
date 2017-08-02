@@ -2,7 +2,7 @@ node {
     def app
     withEnv([
             "Export DOCKER_HOST="tcp://172.18.0.10:2375",
-            ])
+    ])
             
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
