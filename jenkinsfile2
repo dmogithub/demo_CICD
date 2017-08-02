@@ -40,7 +40,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        sh 'docker stack deploy -c stack1.yml app'
+        sh 'docker stack deploy -c compose-secret.yml app'
     }
     }
 }   
