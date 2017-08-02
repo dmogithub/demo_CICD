@@ -43,5 +43,4 @@ node {
         sh 'docker stack deploy -c compose-secret.yml app'
         }
     }
-    }
 }   
