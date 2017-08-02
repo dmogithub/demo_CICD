@@ -40,7 +40,7 @@ node {
          * For this example, we're using a Volkswagen-type approach ;-) */
 
         
-            sh 'docker staxk deploy -c compose-secret.yml app'
+            sh 'docker stack deploy -c compose-secret.yml app'
         }
     }
 }   
