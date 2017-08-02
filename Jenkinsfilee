@@ -42,5 +42,8 @@ node {
         
             sh 'docker stack deploy -c docker-compose.yml app'
         }
+    stage('Deploy approval'){
+    input "Deploy to prod?"
+    }
     }
 }   
