@@ -35,12 +35,13 @@ node {
             app.push("latest")
         }
     }
-     
-     stage('deploy application') {
-        /* This builds the actual image; synonymous to
-         * docker build on the command line */
+     stage('deploy app') {
+        /* Ideally, we would run a test framework against our image.
+         * For this example, we're using a Volkswagen-type approach ;-) */
 
-        sh 'docker stack deploy -c compose-secret.yml app'
+        app.inside {
+            sh 'docker ps'
         }
+    }
     }
 }   
