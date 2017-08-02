@@ -1,9 +1,8 @@
 node {
     def app
-    withEnv([
-            "Export DOCKER_HOST="tcp://172.18.0.10:2375",
-    ])
-            
+    
+    docker.withServer('tcp://172.18.0.10:2375'){
+         
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
 
@@ -16,7 +15,7 @@ node {
 
         app = docker.build("getintodevops/hellonode")
     }
-
+    }
     stage('Test image') {
         /* Ideally, we would run a test framework against our image.
          * For this example, we're using a Volkswagen-type approach ;-) */
