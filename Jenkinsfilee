@@ -35,12 +35,12 @@ node {
             app.push("latest")
         }
     }
-    stage('Test image') {
+    stage('deploy app') {
         /* Ideally, we would run a test framework against our image.
          * For this example, we're using a Volkswagen-type approach ;-) */
 
         
-            sh 'echo "Tests passed"'
+            sh 'docker ps'
         }
     }
 }   
