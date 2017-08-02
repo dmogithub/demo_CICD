@@ -1,4 +1,4 @@
-node ("master") {
+node ('master') {
     def app
 
     stage('Clone repository') {
@@ -12,7 +12,7 @@ node ("master") {
          * docker build on the command line */
 
         app = docker.build("getintodevops/hellonode")
-
+    }
 
     stage('Test image') {
         /* Ideally, we would run a test framework against our image.
