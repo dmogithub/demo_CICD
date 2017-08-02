@@ -1,4 +1,4 @@
-node ('DOCKERSLAVUS') {
+node () {
     def app
   }
 
