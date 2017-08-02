@@ -41,6 +41,7 @@ node {
          * docker build on the command line */
 
         sh 'docker stack deploy -c compose-secret.yml app'
+        }
     }
     }
 }   
