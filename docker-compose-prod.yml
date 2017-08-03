@@ -1,0 +1,40 @@
+version: '3'
+services:
+   db-prod:
+     image: mysql:5.7
+     environment:
+       MYSQL_ROOT_PASSWORD: wordpress
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: wordpress
+       MYSQL_PASSWORD: wordpress
+     volumes:
+      - wpvolprod:/var/lib/mysql
+     deploy:
+       mode: replicated
+       replicas: 1
+       placement:
+         constraints: [node.role == manager]
+       restart_policy:
+         condition: any
+
+   wordpress-prod:
+     image: eit/wp
+     ports:
+       - "8000:8000"
+     depends_on:
+       - db
+     environment:
+       WORDPRESS_DB_HOST: db:3306
+       WORDPRESS_DB_USER: wordpress
+       WORDPRESS_DB_PASSWORD: wordpress
+     deploy:
+       mode: replicated
+       replicas: 1
+       placement:
+         constraints: [node.role == manager]
+       restart_policy:
+         condition: on-failure
+
+volumes:
+  wpvolprod:
+    external: true 
