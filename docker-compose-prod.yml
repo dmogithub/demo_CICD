@@ -24,7 +24,7 @@ services:
      depends_on:
        - db-prod
      environment:
-       WORDPRESS_DB_HOST: db:3306
+       WORDPRESS_DB_HOST: db-prod:3306
        WORDPRESS_DB_USER: wordpress
        WORDPRESS_DB_PASSWORD: wordpress
      deploy:
