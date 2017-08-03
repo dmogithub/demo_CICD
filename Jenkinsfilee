@@ -60,7 +60,7 @@ node {
                        echo "no stack to stop"
                }
         
-             sh 'docker stack deploy -c docker-compose-prod.yml prodapp'
+             sh 'docker stack deploy --with-registry-auth -c docker-compose-prod.yml prodapp'
          }
     }
 }   
