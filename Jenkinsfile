@@ -54,7 +54,7 @@ node {
         /* Ideally, we would run a test framework against our image.
          * For this example, we're using a Volkswagen-type approach ;-) */
                try{
-                      sh "docker stack rm pordapp"
+                      sh "docker stack rm prodapp"
                       
                } catch (Exception _) {
                        echo "no stack to stop"
