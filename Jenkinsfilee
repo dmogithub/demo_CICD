@@ -45,12 +45,12 @@ node {
     stage('Deploy approval'){
     input "Deploy to prod?"
     }
-        /*stage('wpapp prod env')  /*{
+        stage('wpapp prod env')  {
         /* Ideally, we would run a test framework against our image.
          * For this example, we're using a Volkswagen-type approach ;-) */
 
         
-             /*sh 'docker stack deploy -c docker-compose-prod.yml prodapp'
-         /*}
+             sh 'docker stack deploy -c docker-compose-prod.yml prodapp'
+         }
     }
 }   
