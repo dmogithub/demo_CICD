@@ -35,15 +35,22 @@ node {
             app.push("latest")
         }
     }
-    stage('deploy app') {
+    stage('wpapp dev env') {
         /* Ideally, we would run a test framework against our image.
          * For this example, we're using a Volkswagen-type approach ;-) */
 
         
-            sh 'docker stack deploy -c docker-compose.yml app'
+            sh 'docker stack deploy -c docker-compose-dev.yml devapp'
         }
     stage('Deploy approval'){
     input "Deploy to prod?"
     }
+       stage('wpapp prod env') {
+        /* Ideally, we would run a test framework against our image.
+         * For this example, we're using a Volkswagen-type approach ;-) */
+
+        
+            sh 'docker stack deploy -c docker-compose-prod.yml prodapp'
+        }
     }
 }   
