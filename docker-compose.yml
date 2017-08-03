@@ -1,6 +1,6 @@
 version: '3'
 services:
-   db:
+   db-dev:
      image: mysql:5.7
      environment:
        MYSQL_ROOT_PASSWORD: wordpress
@@ -17,7 +17,7 @@ services:
        restart_policy:
          condition: any
 
-   wordpress:
+   wordpress-dev:
      image: eit/wp
      ports:
        - "80:80"
