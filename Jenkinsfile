@@ -38,13 +38,7 @@ node {
     stage('wpapp dev env') {
         /* Ideally, we would run a test framework against our image.
          * For this example, we're using a Volkswagen-type approach ;-) */
-            try{
-                      sh "docker stack rm devdapp"
-                      
-               } catch (Exception _) {
-                       echo "no stack to stop"
-               }
-        
+            
             sh 'docker stack deploy --with-registry-auth  -c docker-compose-dev.yml devapp'
         }
     stage('Deploy approval'){
@@ -53,13 +47,7 @@ node {
         stage('wpapp prod env')  {
         /* Ideally, we would run a test framework against our image.
          * For this example, we're using a Volkswagen-type approach ;-) */
-               try{
-                      sh "docker stack rm prodapp"
-                      
-               } catch (Exception _) {
-                       echo "no stack to stop"
-               }
-        
+               
              sh 'docker stack deploy --with-registry-auth -c docker-compose-prod.yml prodapp'
          }
     }
