@@ -18,7 +18,7 @@ services:
          condition: any
 
    wordpress-prod:
-     image: eit/wp
+     image: azcrig001cr001-on.azurecr.io/eit/wp 
      ports:
        - "8000:80"
      depends_on:
