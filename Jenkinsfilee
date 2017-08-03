@@ -45,7 +45,7 @@ node {
                        echo "no stack to stop"
                }
         
-            sh 'docker stack deploy --with-registry-auth false  -c docker-compose-dev.yml devapp'
+            sh 'docker stack deploy --with-registry-auth  -c docker-compose-dev.yml devapp'
         }
     stage('Deploy approval'){
     input "Deploy to prod?"
