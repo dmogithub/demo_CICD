@@ -39,8 +39,7 @@ services:
 
 volumes:
   wpvoldev:
-    external: true
-    
+    external: true  
  volumes:
    wpdev:
      external: true 
