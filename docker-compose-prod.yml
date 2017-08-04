@@ -40,7 +40,6 @@ services:
 volumes:
   wpvolprod:
     external: true 
-    
-volumes:
+   
   wpprod:
     external: true 
