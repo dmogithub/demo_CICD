@@ -19,6 +19,8 @@ services:
 
    wordpress-dev:
      image: azcrig001cr001-on.azurecr.io/eit/wp 
+     volumes:
+       - wpdev:/var/www/html
      ports:
        - "80:80"
      depends_on:
@@ -37,4 +39,8 @@ services:
 
 volumes:
   wpvoldev:
-    external: true 
+    external: true
+    
+ volumes:
+   wpvoldev:
+     external: true 
