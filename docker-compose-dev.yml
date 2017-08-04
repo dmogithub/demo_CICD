@@ -42,5 +42,5 @@ volumes:
     external: true
     
  volumes:
-   wpvoldev:
+   wpdev:
      external: true 
