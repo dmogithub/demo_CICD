@@ -40,6 +40,5 @@ services:
 volumes:
   wpvolprod:
     external: true 
-   
   wpprod:
     external: true 
