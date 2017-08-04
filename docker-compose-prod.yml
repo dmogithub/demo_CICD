@@ -19,6 +19,8 @@ services:
 
    wordpress-prod:
      image: azcrig001cr001-on.azurecr.io/eit/wp 
+     volumes:
+       - wpprod:/var/www/html
      ports:
        - "8000:80"
      depends_on:
@@ -37,4 +39,8 @@ services:
 
 volumes:
   wpvolprod:
+    external: true 
+    
+volumes:
+  wpprod:
     external: true 
