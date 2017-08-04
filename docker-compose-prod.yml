@@ -8,7 +8,7 @@ services:
        MYSQL_USER: wordpress
        MYSQL_PASSWORD: wordpress
      volumes:
-      - wpvolprod:/var/lib/mysql
+      - wpvolprod1:/var/lib/mysql
      deploy:
        mode: replicated
        replicas: 1
@@ -20,7 +20,7 @@ services:
    wordpress-prod:
      image: azcrig001cr001-on.azurecr.io/eit/wp 
      volumes:
-       - wpprod:/var/www/html
+       - wpprod1:/var/www/html
      ports:
        - "8000:80"
      depends_on:
@@ -38,7 +38,7 @@ services:
          condition: on-failure
 
 volumes:
-  wpvolprod:
+  wpvolprod1:
     external: true 
-  wpprod:
+  wpprod1:
     external: true 
