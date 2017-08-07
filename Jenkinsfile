@@ -2,7 +2,7 @@ node {
     def app
     sshagent (credentials: ['admcloud']) {
     sh 'ssh admcloud@172.18.0.14'
-    docker.withServer('tcp://172.18.0.10:2375'){
+    docker.withServer('tcp://172.18.0.14:2375'){
          
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
