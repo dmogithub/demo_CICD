@@ -1,7 +1,7 @@
 node {
     def app
     
-    sshagent (credentials: ['deploy-dev']) {
+    sshagent (admcloud) {
     sh 'ssh   admcloud@172.18.0.14'
  
     docker.withServer('tcp://172.18.0.14:2375'){
