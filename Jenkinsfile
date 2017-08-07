@@ -1,7 +1,6 @@
 node {
     def app
-    sshagent (credentials: ['admcloud']) {
-    sh 'ssh admcloud@172.18.0.14'
+    
     docker.withServer('tcp://172.18.0.14:2375'){
          
     stage('Clone repository') {
@@ -51,6 +50,5 @@ node {
                
              sh 'docker stack deploy --with-registry-auth -c docker-compose-prod.yml prodapp'
          }
-    }
     }    
 }   
