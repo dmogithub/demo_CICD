@@ -1,8 +1,6 @@
 node {
     def app
-    
-    sshagent (['admcloud']) {
-    sh 'ssh   admcloud@172.18.0.14'
+
  
     docker.withServer('tcp://172.18.0.14:2375'){
          
@@ -10,7 +8,7 @@ node {
         /* Let's make sure we have the repository cloned to our workspace */
 
         checkout scm
-    }
+    
     }
     }
 } 
