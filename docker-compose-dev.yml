@@ -13,7 +13,7 @@ services:
        mode: replicated
        replicas: 1
        placement:
-         constraints: [node.role == manager]
+         constraints: [node.role == worker-0]
        restart_policy:
          condition: any
 
@@ -33,7 +33,7 @@ services:
        mode: replicated
        replicas: 1
        placement:
-         constraints: [node.role == worker]
+         constraints: [node.role == worker-1]
        restart_policy:
          condition: on-failure
 
