@@ -1,7 +1,7 @@
 node {
     def app
     
-    docker.withServer('tcp://172.18.0.14:2375'){
+    docker.withServer('tcp://172.19.1.5:2375'){
          
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
