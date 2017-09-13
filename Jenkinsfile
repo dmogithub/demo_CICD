@@ -48,7 +48,7 @@ node {
         /* Ideally, we would run a test framework against our image.
          * For this example, we're using a Volkswagen-type approach ;-) */
                
-             sh 'docker stack deploy --with-registry-auth -c docker-compose-prod.yml prodapp'
+             sh 'docker stack deploy --with-registry-auth  -c docker-compose-prod.yml prodapp'
          }
     }    
 }   
