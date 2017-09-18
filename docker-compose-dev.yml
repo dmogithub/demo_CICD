@@ -37,7 +37,6 @@ services:
        restart_policy:
          condition: on-failure
 
-
 volumes:
   wpvoldev1:
     external: true  
